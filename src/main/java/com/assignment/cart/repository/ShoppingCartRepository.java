@@ -5,7 +5,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Component;
 
-import com.assignment.cart.config.exception.ShoppingCartNotFoundException;
+import com.assignment.cart.exception.ShoppingCartNotFoundException;
 import com.assignment.cart.model.Product;
 import com.assignment.cart.model.ShoppingCart;
 

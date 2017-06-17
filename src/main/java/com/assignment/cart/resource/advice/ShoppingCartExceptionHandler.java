@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import com.assignment.cart.config.exception.ShoppingCartNotFoundException;
+import com.assignment.cart.exception.ShoppingCartNotFoundException;
 
 @ControllerAdvice
 public class ShoppingCartExceptionHandler extends ResponseEntityExceptionHandler {
