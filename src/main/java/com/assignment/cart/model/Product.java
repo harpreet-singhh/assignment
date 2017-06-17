@@ -1,7 +1,7 @@
 package com.assignment.cart.model;
 
 public class Product {
-
+	
 	private Integer productId;
 
 	private String productName;

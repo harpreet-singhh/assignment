@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import com.assignment.cart.exception.ShoppingCartNotFoundException;
+import com.assignment.cart.exception.ResourceNotFoundException;
 
 @ControllerAdvice
 public class ShoppingCartExceptionHandler extends ResponseEntityExceptionHandler {
 
-	@ExceptionHandler(value = { ShoppingCartNotFoundException.class })
-	protected ResponseEntity<Object> handleConflict(RuntimeException ex, WebRequest request) {
-		return new ResponseEntity<Object>(
+	@ExceptionHandler(value = { ResourceNotFoundException.class })
+	protected ResponseEntity<com.assignment.cart.model.Error> handleConflict(RuntimeException ex, WebRequest request) {
+		return new ResponseEntity<com.assignment.cart.model.Error>(
 				new com.assignment.cart.model.Error(ex.getMessage(), HttpStatus.NOT_FOUND.name(), "Error"),
 				new HttpHeaders(), HttpStatus.NOT_FOUND);
 	}

@@ -9,7 +9,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import com.assignment.cart.config.ApplicationConfig;
-import com.assignment.cart.exception.ShoppingCartNotFoundException;
+import com.assignment.cart.exception.ResourceNotFoundException;
 import com.assignment.cart.model.Product;
 import com.assignment.cart.model.ProductCategory;
 import com.assignment.cart.model.ShoppingCart;
@@ -73,7 +73,7 @@ public class ShoppingCartResourceTest {
 	public void testCartNotFound() {
 		try {
 			sResource.getCart(100);
-		} catch (ShoppingCartNotFoundException e) {
+		} catch (ResourceNotFoundException e) {
 			Assert.assertNotNull(e);
 		}
 	}
