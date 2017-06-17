@@ -1,2 +1,2 @@
 # assignment
-Shpoing Cart
+Shopping Cart
