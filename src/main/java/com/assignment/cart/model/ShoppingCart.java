@@ -84,12 +84,13 @@ public class ShoppingCart {
 
 	public String printBill() {
 		StringBuilder bill = new StringBuilder();
-		bill.append("--------------Cart Details----------------------\n");
+		bill.append("-----------------Cart Details----------------------\n");
 		bill.append("Total Items : " + totalItems + "\n");
 		bill.append("Net Payable Amount : " + totalAmountWithTax + "\n");
 		bill.append("Total Amount : " + totalAmount + "\n");
 		bill.append("Total Tax : " + totalTax + "\n");
 		for (Product product : items) {
+			bill.append("----------------------------------------------------------------------------------------------------------\n");
 			bill.append(
 					"Product Id : " + product.getProductId() + " Product Name : " + product.getProductName());
 			bill.append(" Quantity : " + product.getQuantity() + " Price : " + product.getPrice() + " Total Price :"
