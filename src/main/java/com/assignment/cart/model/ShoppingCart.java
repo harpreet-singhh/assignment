@@ -91,10 +91,10 @@ public class ShoppingCart {
 		bill.append("Total Tax : " + totalTax + "\n");
 		for (Product product : items) {
 			bill.append(
-					"Product Id : " + product.getProductId() + " Product Name : " + product.getProductName() + "\n");
-			bill.append("Quantity : " + product.getQuantity() + " Price : " + product.getPrice() + " Total Price :"
-					+ product.getTotalPrice() + "\n");
-			bill.append("Total Tax : " + product.getTotalTax() + "\n");
+					"Product Id : " + product.getProductId() + " Product Name : " + product.getProductName());
+			bill.append(" Quantity : " + product.getQuantity() + " Price : " + product.getPrice() + " Total Price :"
+					+ product.getTotalPrice());
+			bill.append(" Total Tax : " + product.getTotalTax() + "\n");
 		}
 		return bill.toString();
 	}

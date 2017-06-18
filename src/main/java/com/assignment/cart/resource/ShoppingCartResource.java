@@ -1,5 +1,7 @@
 package com.assignment.cart.resource;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,7 +22,7 @@ public class ShoppingCartResource {
 	IShoppingCartService shoppingCartService;
 
 	@RequestMapping(method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
-	public ShoppingCart createCart(@RequestBody Product product) {
+	public ShoppingCart createCart(@Valid @RequestBody Product product) {
 		ShoppingCart cart = null;
 		if (product != null) {
 			cart = shoppingCartService.createCart(product);
@@ -29,7 +31,7 @@ public class ShoppingCartResource {
 	}
 
 	@RequestMapping(path = "/{cartId}", method = RequestMethod.PUT, produces = "application/json", consumes = "application/json")
-	public ShoppingCart updateCart(@RequestBody Product product, @PathVariable("cartId") Integer cartId) {
+	public ShoppingCart updateCart(@Valid @RequestBody Product product, @PathVariable("cartId") Integer cartId) {
 		ShoppingCart cart = null;
 		if (product != null) {
 			cart = shoppingCartService.addOrUpdate(cartId, product);
@@ -38,7 +40,7 @@ public class ShoppingCartResource {
 	}
 
 	@RequestMapping(path = "/{cartId}", method = RequestMethod.DELETE, produces = "application/json", consumes = "application/json")
-	public ShoppingCart removeFromCart(@RequestBody Product product, @PathVariable("cartId") Integer cartId) {
+	public ShoppingCart removeFromCart(@Valid @RequestBody Product product, @PathVariable("cartId") Integer cartId) {
 		ShoppingCart cart = null;
 		if (product != null) {
 			cart = shoppingCartService.removeFromCart(cartId, product);

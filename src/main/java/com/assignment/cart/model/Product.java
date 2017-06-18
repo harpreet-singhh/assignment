@@ -1,15 +1,22 @@
 package com.assignment.cart.model;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
 public class Product {
 	
+	@NotNull
 	private Integer productId;
 
 	private String productName;
 
+	@Min(1)
 	private Integer quantity;
 
+	@NotNull
 	private Double price;
-
+	
+	@NotNull
 	private ProductCategory category;
 	
 	public Product() {

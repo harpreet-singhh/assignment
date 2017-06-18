@@ -30,10 +30,10 @@ public class ShoppingCartResourceTest {
 		ShoppingCart cart = sResource.createCart(product);
 		Assert.assertNotNull(cart);
 		Assert.assertEquals(product, cart.getItems().get(0));
-		Assert.assertEquals(new Integer("1"), cart.getTotalItems());
-		Assert.assertEquals(new Double("20"), cart.getTotalAmount());
-		Assert.assertEquals(new Double("2"), cart.getTotalTax());
-		Assert.assertEquals(new Double("22"), cart.getTotalAmountWithTax());
+		Assert.assertEquals(new Integer(1), cart.getTotalItems());
+		Assert.assertEquals(new Double(20), cart.getTotalAmount());
+		Assert.assertEquals(new Double(2), cart.getTotalTax());
+		Assert.assertEquals(new Double(22), cart.getTotalAmountWithTax());
 	}
 
 	@Test
@@ -46,12 +46,12 @@ public class ShoppingCartResourceTest {
 		ShoppingCart actualCart = sResource.updateCart(product2, cart.getCartId());
 
 		Assert.assertNotNull(actualCart);
-		Assert.assertEquals(new Integer("3"), actualCart.getTotalItems());
-		Assert.assertEquals(new Double("420"), actualCart.getTotalAmount());
-		Assert.assertEquals(new Double("42"), actualCart.getTotalTax());
-		Assert.assertEquals(new Double("462"), cart.getTotalAmountWithTax());
+		Assert.assertEquals(new Integer(3), actualCart.getTotalItems());
+		Assert.assertEquals(new Double(420), actualCart.getTotalAmount());
+		Assert.assertEquals(new Double(42), actualCart.getTotalTax());
+		Assert.assertEquals(new Double(462), cart.getTotalAmountWithTax());
 	}
-	
+
 	@Test
 	public void testCreateCartTwoItemDiffCategory() {
 		ProductCategory category = new ProductCategory(1, "Category A", 0.10d);
@@ -63,12 +63,12 @@ public class ShoppingCartResourceTest {
 		ShoppingCart actualCart = sResource.updateCart(product2, cart.getCartId());
 
 		Assert.assertNotNull(actualCart);
-		Assert.assertEquals(new Integer("3"), actualCart.getTotalItems());
-		Assert.assertEquals(new Double("420"), actualCart.getTotalAmount());
-		Assert.assertEquals(new Double("82"), actualCart.getTotalTax());
-		Assert.assertEquals(new Double("502"), cart.getTotalAmountWithTax());
+		Assert.assertEquals(new Integer(3), actualCart.getTotalItems());
+		Assert.assertEquals(new Double(420), actualCart.getTotalAmount());
+		Assert.assertEquals(new Double(82), actualCart.getTotalTax());
+		Assert.assertEquals(new Double(502), cart.getTotalAmountWithTax());
 	}
-	
+
 	@Test
 	public void testCartNotFound() {
 		try {
@@ -90,14 +90,14 @@ public class ShoppingCartResourceTest {
 		// remove the added item
 		ShoppingCart actualCart = sResource.removeFromCart(product2, cart.getCartId());
 		Assert.assertNotNull(actualCart);
-		Assert.assertEquals(new Integer("1"), actualCart.getTotalItems());
-		Assert.assertEquals(new Double("20"), actualCart.getTotalAmount());
-		Assert.assertEquals(new Double("2"), actualCart.getTotalTax());
-		Assert.assertEquals(new Double("22"), cart.getTotalAmountWithTax());
+		Assert.assertEquals(new Integer(1), actualCart.getTotalItems());
+		Assert.assertEquals(new Double(20), actualCart.getTotalAmount());
+		Assert.assertEquals(new Double(2), actualCart.getTotalTax());
+		Assert.assertEquals(new Double(22), cart.getTotalAmountWithTax());
 	}
 
 	@Test
-	public void testCreateAddAndPrintBill() {
+	public void testCreateUpdateAndPrintBill() {
 		ProductCategory category = new ProductCategory(1, "Category A", 0.10d);
 		Product product = new Product(1, "Product A", 1, 20d, category);
 		Product product2 = new Product(2, "Product B", 2, 200d, category);
@@ -105,10 +105,10 @@ public class ShoppingCartResourceTest {
 		// add item
 		ShoppingCart actualCart = sResource.updateCart(product2, cart.getCartId());
 		Assert.assertNotNull(actualCart);
-		Assert.assertEquals(new Integer("3"), actualCart.getTotalItems());
-		Assert.assertEquals(new Double("420"), actualCart.getTotalAmount());
-		Assert.assertEquals(new Double("42"), actualCart.getTotalTax());
-		Assert.assertEquals(new Double("462"), cart.getTotalAmountWithTax());
+		Assert.assertEquals(new Integer(3), actualCart.getTotalItems());
+		Assert.assertEquals(new Double(420), actualCart.getTotalAmount());
+		Assert.assertEquals(new Double(42), actualCart.getTotalTax());
+		Assert.assertEquals(new Double(462), cart.getTotalAmountWithTax());
 		System.out.println(actualCart.printBill().toString());
 	}
 

@@ -1,11 +1,15 @@
 package com.assignment.cart.model;
 
+import javax.validation.constraints.NotNull;
+
 public class ProductCategory {
 
+	@NotNull
 	private Integer productCategoryId;
 
 	private String name;
-
+	
+	@NotNull
 	private Double applicableTax;
 	
 	public ProductCategory() {
