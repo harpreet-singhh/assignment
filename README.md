@@ -9,7 +9,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-JDK 8
+JDK 8 <br />
 Maven
 
 ### Building
@@ -50,32 +50,33 @@ Below are the REST endpoints exposed via the application.
 
 
 ### Create cart
-Endpoint:	/rest/cart
-Type:	POST
-Description: Use this to insert a new item to a cart for the first time.
+Endpoint:	/rest/cart <br />
+Type:	POST <br />
+Description: Use this to insert a new item to a cart for the first time. <br />
 
 ### Get cart
-Endpoint:	/rest/cart/{cartId}
-Type:	GET
-Description: Returns the cart that exists with given cart id.
+Endpoint:	/rest/cart/{cartId} <br />
+Type:	GET <br />
+Description: Returns the cart that exists with given cart id. <br />
 
 ### Update cart
-Endpoint:	/rest/cart/{cartId}
-Type:	PUT
-Description: Updated the cart with the given cart id with the product passed in the request.
+Endpoint:	/rest/cart/{cartId} <br />
+Type:	PUT <br />
+Description: Updated the cart with the given cart id with the product passed in the request. <br />
 
 ### Delete from cart
-Endpoint:	/rest/cart/{cartId}
-Type:	DELETE
-Description: Delete a product in the given cart id.
+Endpoint:	/rest/cart/{cartId} <br />
+Type:	DELETE <br />
+Description: Delete a product in the given cart id. <br />
 
 ### Checkout cart
-Endpoint:	/rest/cart/{cartId}/checkout
-Type:	GET
-Description: Returns the cart id with details formatted.
+Endpoint:	/rest/cart/{cartId}/checkout <br />
+Type:	GET <br />
+Description: Returns the cart id with details formatted. <br />
 
-All the endpoint's are secured with HTTP Basic Authentication. To invoke the endpoint's use the below details
-user name - admin
+All the endpoint's are secured with HTTP Basic Authentication.<br />
+To invoke the endpoint's use the below details:<br />
+user name - admin<br />
 password - secret
 
 ## Framework's and Libraries used
