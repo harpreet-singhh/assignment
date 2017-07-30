@@ -1,5 +1,4 @@
-# Assignment
-Shopping Cart
+# Shopping Cart
 
 Exposes set of REST endpoint's for performing various cart related operations like create cart, update cart and delete items from cart. 
 
